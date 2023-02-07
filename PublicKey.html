@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/solana-web3.js@0.14.6/umd/index.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="privateKeyInput">
+    <button id="submitBtn">Submit</button>
+    <p id="publicKeyOutput"></p>
+    
+    <script>
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.addEventListener('click', () => {
+        const privateKeyInput = document.getElementById('privateKeyInput').value;
+        const privateKey = Solana.PrivateKey.fromBase58(privateKeyInput);
+        const publicKey = privateKey.publicKey;
+        document.getElementById('publicKeyOutput').innerHTML = `Public Key: ${publicKey.toBase58()}`;
+      });
+    </script>
+  </body>
+</html>
