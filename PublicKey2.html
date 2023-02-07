@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/solana-web3.js@0.14.6/umd/index.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="passphraseInput">
+    <button id="submitBtn">Submit</button>
+    <p id="balanceOutput"></p>
+    
+    <script>
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.addEventListener('click', async () => {
+        const passphraseInput = document.getElementById('passphraseInput').value;
+        const privateKey = Solana.PrivateKey.fromPassphrase(passphraseInput);
+        const publicKey = privateKey.publicKey;
+        const balance = await Solana.getBalance(publicKey);
+        document.getElementById('balanceOutput').innerHTML = `Balance: ${balance}`;
+      });
+    </script>
+  </body>
+</html>
