@@ -2,6 +2,6 @@
 
 Click one of the buttons below to view a randomly generated list of words:
 
-[12 words](https://bouchidocode.github.io/Randoms/12.html)
+<a href="https://bouchidocode.github.io/Randoms/12.html" target="_blank">12 words</a>
 
-[24 words](https://bouchidocode.github.io/Randoms/24.html)
+<a href="https://bouchidocode.github.io/Randoms/24.html" target="_blank">24 words</a>
