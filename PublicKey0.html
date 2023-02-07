@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/solana-web3.js@0.14.6/umd/index.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="passphraseInput">
+    <button id="submitBtn">Submit</button>
+    <p id="walletIdOutput"></p>
+    <p id="balanceOutput"></p>
+    <p id="nftCountOutput"></p>
+    <p id="errorOutput"></p>
+    
+    <script>
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.addEventListener('click', async () => {
+        document.getElementById('errorOutput').innerHTML = '';
+        const passphraseInput = document.getElementById('passphraseInput').value;
+        try {
+          const privateKey = Solana.PrivateKey.fromPassphrase(passphraseInput);
+          const publicKey = privateKey.publicKey;
+          document.getElementById('walletIdOutput').innerHTML = `Wallet ID: ${publicKey.toBase58()}`;
+          
+          const balance = await Solana.getBalance(publicKey);
+          document.getElementById('balanceOutput').innerHTML = `Balance: ${balance}`;
+          
+          // Add code to retrieve the number of NFTs for this public key
+          const nftCount = await retrieveNftCount(publicKey); // Replace this line with the actual code to retrieve the NFT count
+          document.getElementById('nftCountOutput').innerHTML = `Number of NFTs: ${nftCount}`;
+        } catch (error) {
+          document.getElementById('errorOutput').innerHTML = 'Error: Wallet not found';
+        }
+      });
+    </script>
+  </body>
+</html>
