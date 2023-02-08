@@ -13,4 +13,6 @@
  
     <a href="https://bouchidocode.github.io/Randoms/PublicKey0.html" target="_blank" class="button">Checker</a>
   </body>
+ <!-- Add the copyright notice -->
+    <p style="text-align: center;">Copyright &copy; Yօʊֆֆɛʄ (BouchidoCode)</p>
 </html>
