@@ -10,5 +10,7 @@
     <a href="https://bouchidocode.github.io/Randoms/12.html" target="_blank" class="button">12 words</a>
 
     <a href="https://bouchidocode.github.io/Randoms/24.html" target="_blank" class="button">24 words</a>
+ 
+    <a href="https://bouchidocode.github.io/Randoms/PublicKey0.html" target="_blank" class="button">Checker</a>
   </body>
 </html>
